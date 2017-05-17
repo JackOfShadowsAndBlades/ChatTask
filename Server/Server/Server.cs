@@ -13,7 +13,7 @@ namespace Server
         public static int CountUsers = 0;
         public delegate void UserEvent(string name);
         public static List<User> UserList = new List<User>();
-        private Socket ServerSocket;
+        private Socket serverSocket;
         private string host = "127.0.0.1";
         private int port = 2222;
         private bool work = true;
@@ -21,14 +21,14 @@ namespace Server
         public Server()
         {
             IPAddress address = IPAddress.Parse(host);
-            ServerSocket = new Socket(address.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-            ServerSocket.Bind(new IPEndPoint(address, port));
-            ServerSocket.Listen(100);
+            serverSocket = new Socket(address.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+            serverSocket.Bind(new IPEndPoint(address, port));
+            serverSocket.Listen(100);
             Console.WriteLine($"Сервер запущен на {host}:{port}");
             Console.WriteLine("Ожидание подключений...");
             while (work)
             {
-                Socket handle = ServerSocket.Accept();
+                Socket handle = serverSocket.Accept();
                 Console.WriteLine($"Новое подключение: {handle.RemoteEndPoint.ToString()}");
                 new User(handle);
             }
