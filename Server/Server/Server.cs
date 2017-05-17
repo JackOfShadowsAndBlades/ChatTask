@@ -34,6 +34,23 @@ namespace Server
             }
             Console.WriteLine("Закрытие сервера...");
         }
+
+        public static event UserEvent UserConnected = (Username) =>
+        {
+            Console.WriteLine($"Пользователь {Username} подключился");
+            CountUsers++;
+            SendGlobalMessage($"Пользователь {Username} подключился к чату.", "Black");
+            SendUserList();
+        };
+
+        public static event UserEvent UserDisconnected = (Username) =>
+        {
+            Console.WriteLine($"Пользователь {Username} отключился");
+            CountUsers--;
+            SendGlobalMessage($"Пользователь {Username} отключился от чата.", "Black");
+            SendUserList();
+        };
+
         public static void NewUser(User user)
         {
             if (!UserList.Contains(user))
@@ -86,21 +103,5 @@ namespace Server
                 UserList[i].SendMessage(content, color);
             }
         }
-
-        public static event UserEvent UserConnected = (Username) =>
-        {
-            Console.WriteLine($"Пользователь {Username} подключился");
-            CountUsers++;
-            SendGlobalMessage($"Пользователь {Username} подключился к чату.", "Black");
-            SendUserList();
-        };
-
-        public static event UserEvent UserDisconnected = (Username) =>
-        {
-            Console.WriteLine($"Пользователь {Username} отключился");
-            CountUsers--;
-            SendGlobalMessage($"Пользователь {Username} отключился от чата.", "Black");
-            SendUserList();
-        };
     }
 }

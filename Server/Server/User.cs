@@ -42,6 +42,11 @@ namespace Server
 
         private bool setName(string Name)
         {
+            for (int i = 0; i < Server.CountUsers; i++)
+            {
+                if (Server.UserList[i].Username == Name)
+                    return false;
+            }
             Username = Name;
             Server.NewUser(this);
             authSuccess = true;

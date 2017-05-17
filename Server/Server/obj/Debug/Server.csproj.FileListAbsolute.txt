@@ -3,3 +3,9 @@ c:\users\roman\documents\visual studio 2015\Projects\Server\Server\bin\Debug\Ser
 c:\users\roman\documents\visual studio 2015\Projects\Server\Server\bin\Debug\Server.pdb
 c:\users\roman\documents\visual studio 2015\Projects\Server\Server\obj\Debug\Server.exe
 c:\users\roman\documents\visual studio 2015\Projects\Server\Server\obj\Debug\Server.pdb
+C:\Users\Roman\Documents\GitHub\ChatTask\Server\Server\bin\Debug\Server.exe.config
+C:\Users\Roman\Documents\GitHub\ChatTask\Server\Server\obj\Debug\Server.exe
+C:\Users\Roman\Documents\GitHub\ChatTask\Server\Server\obj\Debug\Server.pdb
+C:\Users\Roman\Documents\GitHub\ChatTask\Server\Server\bin\Debug\Server.exe
+C:\Users\Roman\Documents\GitHub\ChatTask\Server\Server\bin\Debug\Server.pdb
+C:\Users\Roman\Documents\GitHub\ChatTask\Server\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
